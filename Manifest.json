@@ -1,0 +1,17 @@
+{
+  "name": "V2 Sale Helper",
+  "description": "Click and grab all relevant v2 info for scheduling sales",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "content_scripts": [
+	  {
+		  "matches": ["<all_urls>"],
+		  "js": ["content.js"]
+	  }
+  ],
+  "browser_action":{
+	  "default_popup": "popup.html",
+	  "default_title": "V2 Slayer"
+  }
+}
+
