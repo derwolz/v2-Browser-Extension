@@ -9,7 +9,6 @@ var DateEnd = 0;
 var CaseNr = 0;
 var SaleAmt = 0;
 var d = new Date();
-const urlpos = 7 // this is the final position after / indexed at 0 ie https:[0]/[1]/www.web.com[2]/cat1[3]/cat2[4]
 
 chrome.runtime.onMessage.addListener(function(request){
 	var caseInfo = request.split(",")
@@ -24,14 +23,8 @@ chrome.runtime.onMessage.addListener(function(request){
 	
 	var node = document.getElementsByClassName("pagination")[0].getElementsByTagName("a");
 	var result = []
-	//for (i = 1; i < node.length;i++){ 
-	//node[i].trigger("click",
-	//		document.addEventListener('DOMContentLoaded', function() {
-			result += GetInfo()
-			
-	//	}));
-		
-	//}
+	result += GetInfo()
+	
 	console.log(result)
 	
 	
@@ -50,7 +43,6 @@ chrome.runtime.onMessage.addListener(function(request){
 
 function GetInfo() {
 	var v2Links = document.getElementsByClassName(detaildiv);
-	//console.log(v2Links);
 	var v2Title = []
 	for (let i = 1; i < TitleMatches.length; i++){
 		v2Title.push(TitleMatches[i].innerHTML);
@@ -61,7 +53,6 @@ function GetInfo() {
 		v2IDs.push(temp_arr[temp_arr.length-1]);
 	}
 	var v2Links = document.getElementsByClassName(detaildiv);
-	//console.log(v2Links);
 	var v2Title = []
 	for (let i = 1; i < TitleMatches.length; i++){
 		v2Title.push(TitleMatches[i].innerHTML);
